@@ -21,11 +21,13 @@
 }
 
 /* Body text: Poppins 18px, line height 1.35em (site-wide) */
-body {
-  font-size: 18px;
-  line-height: 1.35em;
-}
+@layer base {
+  body {
+    font-size: 18px;
+    line-height: 1.35em;
+  }
 
-p {
-  margin-bottom: 0.9em;
+  p {
+    margin-bottom: 0.9em;
+  }
 }
