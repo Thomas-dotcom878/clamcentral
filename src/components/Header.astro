@@ -1,0 +1,15 @@
+---
+import { topNav } from '../data/site';
+---
+
+<header class="bg-black text-white">
+	<div class="mx-auto flex max-w-[1080px] flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-4 lg:py-5">
+		<a href="/" class="flex items-center gap-3" aria-label="CLAMcentral home">
+			<img src="/images/logo.png" alt="" width="52" height="52" class="size-[44px] lg:size-[52px]" />
+			<span class="text-[26px] leading-none font-bold text-lime lg:text-[31px]">CLAMcentral</span>
+		</a>
+		<nav class="flex flex-wrap items-center gap-x-6 gap-y-1 font-nav text-[17px] font-semibold lg:gap-x-[30px] lg:text-[22px]">
+			{topNav.map((l) => <a href={l.href} class="py-1 hover:text-lime">{l.label}</a>)}
+		</nav>
+	</div>
+</header>

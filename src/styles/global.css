@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+/* Fonts and colors copied from the original WordPress site */
+@theme {
+  --font-sans: "Poppins", Arial, sans-serif;  /* body text */
+  --font-display: "Boldonse", "Poppins", sans-serif; /* big headlines */
+  --font-nav: "Open Sans", Arial, sans-serif; /* top menu */
+  --font-button: Arial, Helvetica, sans-serif; /* buttons */
+
+  --color-page: #eff5fb;       /* light blue-gray page background */
+  --color-ink: #0c1115;        /* headings */
+  --color-gray-1: #818181;     /* "ANY LESSON." */
+  --color-gray-2: #5f5f5f;     /* "ANY SUNDAY." */
+  --color-lime: #ccff5f;       /* CLAMcentral in the header */
+  --color-teal: #0d2f2f;       /* dark teal buttons */
+  --color-teal-form: #093239;  /* Sign Up button */
+  --color-charcoal: #343434;   /* hero button */
+  --color-cream: #fff8eb;      /* video box */
+  --color-footer: #fff5d7;     /* footer */
+  --color-star: #f0c419;       /* rating stars */
+}
+
+/* Body text: Poppins 18px, line height 1.35em (site-wide) */
+body {
+  font-size: 18px;
+  line-height: 1.35em;
+}
+
+p {
+  margin-bottom: 0.9em;
+}

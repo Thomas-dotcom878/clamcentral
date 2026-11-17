@@ -1,0 +1,33 @@
+// ============================================================
+//  Site-wide links: the top menu and the footer
+// ============================================================
+//  Page addresses are kept the same as on the WordPress site,
+//  so old links, bookmarks and Google results keep working.
+// ============================================================
+
+// Until donations are moved off WordPress, this still points to the
+// current donation page on the live site.
+export const donateUrl =
+  'https://www.clamcentral.com/my/donation/?checkout_id=853135ac-1fc1-420d-857e-d4db00e6beb8';
+
+export const topNav = [
+  { label: '3-STEPS', href: '/3-steps-to-lifelong-discipleship-2/' },
+  { label: 'NEW TESTAMENT', href: '/clambake-new-testament/' },
+  { label: 'OLD TESTAMENT', href: '/clambake-old-testament/' },
+  { label: 'DONATE', href: donateUrl },
+];
+
+export const footerLinks = [
+  { label: 'Resources', href: '/sunday-school-ideas/' },
+  { label: 'Object Lesson Files', href: '/links/' },
+  { label: 'Object Lessons YouTube', href: 'https://www.youtube.com/@TheObjectLessonsChannel/videos' },
+  { label: 'Sunday School YouTube', href: 'https://www.youtube.com/@SundaySchoolIdeas/videos' },
+  { label: 'Roadmap', href: '/roadmap-2/' },
+  { label: 'Testimonials', href: '/testimonials/' },
+  { label: 'About', href: '/about/' },
+  { label: 'Privacy Policy', href: '/privacy/' },
+  { label: 'Terms and Conditions', href: '/terms/' },
+  { label: 'Bible Basis', href: '/bible-basis/' },
+  { label: 'Donate', href: donateUrl },
+  { label: 'Contact Us', href: '/support/' },
+];
