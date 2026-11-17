@@ -30,7 +30,7 @@ export const newTestament: Lesson[] = [
 ];
 
 export const oldTestament: Lesson[] = [
-  ot(1, 'God’s BIG Plan'), ot(2, 'Creation'), ot(3, 'Adam and Eve'), ot(4, 'Cain and Able'), ot(5, 'Review Lesson'),
+  ot(1, 'God’s BIG Plan'), ot(2, 'Creation'), ot(3, 'Adam and Eve'), ot(4, 'Cain and Abel'), ot(5, 'Review Lesson'),
   ot(6, 'Noah'), ot(7, 'The Tower of Babel'), ot(8, 'Abraham is Called'), ot(9, 'Abraham and Sarah'), ot(10, 'Review Lesson'),
   ot(11, 'Abraham and Isaac'), ot(12, 'Jacob and Esau'), ot(13, 'Joseph the Slave'), ot(14, 'Joseph the Prince'), ot(15, 'Review Lesson'),
   ot(16, 'Moses is Born'), ot(17, 'Moses Murders'), ot(18, 'The Burning Bush'), ot(19, 'The Plagues'), ot(20, 'Review Lesson'),
