@@ -1,0 +1,101 @@
+---
+// Shared layout for the CLAMbake New Testament and Old Testament download pages.
+import type { Lesson } from '../data/clambake';
+
+interface Props {
+	title: string;
+	switchLabel: string;
+	switchHref: string;
+	pagesImage: string;
+	pagesImageHeight: number;
+	lessons: Lesson[];
+	introHtml: string;
+	linksIntroHtml: string;
+	afterLinks?: Lesson[];
+	donateHref?: string;
+}
+const { title, switchLabel, switchHref, pagesImage, pagesImageHeight, lessons, introHtml, linksIntroHtml, afterLinks, donateHref } = Astro.props;
+
+// Groups of ten: the first five run down the left column, the next five down the right.
+const groups: Lesson[][] = [];
+for (let i = 0; i < lessons.length; i += 10) groups.push(lessons.slice(i, i + 10));
+
+const teal = 'bg-[#13a49f]';
+const btn = `flex min-h-[46px] items-center justify-center rounded-[5px] ${teal} px-[18px] py-2 text-center font-button text-[18px] leading-[1.2] tracking-[2px] text-white`;
+const downArrow = 'M256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM127 297c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l71 71L232 120c0-13.3 10.7-24 24-24s24 10.7 24 24l0 214.1 71-71c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L273 409c-9.4 9.4-24.6 9.4-33.9 0L127 297z';
+const upArrow = 'M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 215c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-71-71L280 392c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-214.1-71 71c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 103c9.4-9.4 24.6-9.4 33.9 0L385 215z';
+---
+
+<main class="bg-white px-4 pt-12 pb-16 lg:px-0">
+	<div class="mx-auto max-w-[1080px]">
+		<h1 class="text-center text-[28px] leading-[1.4] font-bold text-ink lg:text-[34px]">{title}</h1>
+		<div class="mt-1 text-center">
+			<a href={switchHref} class:list={['inline-block w-full max-w-[416px] rounded-[5px] px-[18px] py-2 font-button text-[18px] font-bold tracking-[2px] text-white hover:opacity-85', teal]}>{switchLabel}</a>
+		</div>
+		<img src={pagesImage} alt="CLAMbake lesson pages" width="2080" height={pagesImageHeight} class="mt-12 h-auto w-full" fetchpriority="high" />
+
+		<div id="welcome" class="mx-auto mt-8 max-w-[1070px] scroll-mt-4 [&_p]:mb-[30px]">
+			<Fragment set:html={introHtml} />
+		</div>
+
+		<a href="https://youtu.be/Cky057MQyOc" class="mx-auto mt-4 block max-w-[734px] transition-opacity hover:opacity-90">
+			<img src="/images/clambake-video.webp" alt="Watch the CLAMbake introduction video" width="1468" height="826" loading="lazy" class="h-auto w-full" />
+		</a>
+		<p class="mt-3 text-center text-[20px] leading-[1.4] font-bold">Click Image to Watch</p>
+
+		<a href="#links" class="mx-auto mt-6 block size-[60px]" aria-label="Jump to the download links">
+			<svg viewBox="0 0 512 512" class="size-[60px] fill-[#13a49f]" aria-hidden="true"><path d={downArrow} /></svg>
+		</a>
+
+		<div class="mx-auto mt-10 max-w-[1070px] [&_p]:mb-[30px]">
+			<p><strong>Oh hey, Do Us Both a Favor!</strong></p>
+			<p>Although no sign up is required to download, if you do sign up I’ll be able to send you any future updates and notifications. Sign up even if you’ve already signed on as a Beta Tester or any other member. Makes my work load almost easy!</p>
+			<p>And to make this worth your while the free downloads below will remain free for you even if someday I need to charge.</p>
+		</div>
+		<!-- TODO: connect to ActiveCampaign -->
+		<form class="mx-auto mt-6 grid max-w-[1041px] gap-[15px] md:grid-cols-[1fr_1fr_227px]" action="#" method="post">
+			<input type="text" name="name" placeholder="Name" aria-label="Name" class="h-[51px] rounded-[3px] border border-[#ccc] bg-white px-4 font-button text-[14px]" />
+			<input type="email" name="email" placeholder="Email" aria-label="Email" required class="h-[51px] rounded-[3px] border border-[#ccc] bg-white px-4 font-button text-[14px]" />
+			<button type="submit" class:list={['h-[51px] text-[20px] font-bold text-white hover:opacity-85', teal]} style="font-family: Roboto, Arial, sans-serif">Sign Up</button>
+		</form>
+
+		<h2 id="links" class="mt-20 scroll-mt-4 text-center text-[28px] leading-[1.4] font-bold text-ink lg:text-[34px]">The Links</h2>
+		<div class="mx-auto mt-2 max-w-[1070px] [&_p]:mb-[30px]">
+			<Fragment set:html={linksIntroHtml} />
+		</div>
+
+		<div class="mx-auto mt-6 max-w-[819px] space-y-[60px]">
+			{
+				groups.map((g) => (
+					<div class="grid gap-x-8 gap-y-[14px] sm:gap-y-[39px] sm:grid-flow-col sm:grid-cols-[292px_292px] sm:grid-rows-[repeat(5,auto)] items-start sm:justify-center md:gap-x-[235px]">
+						{g.map((l) =>
+							l.href ? (
+								<a href={l.href} class:list={[btn, 'hover:opacity-85']}>{l.label}</a>
+							) : (
+								<span class={btn}>{l.label}</span>
+							),
+						)}
+					</div>
+				))
+			}
+			{
+				afterLinks && (
+					<div class="grid gap-x-8 gap-y-[14px] sm:gap-y-[39px] sm:grid-cols-[292px_292px] sm:justify-center md:gap-x-[235px]">
+						{afterLinks.map((l) => <a href={l.href} class:list={[btn, 'hover:opacity-85']}>{l.label}</a>)}
+					</div>
+				)
+			}
+			{
+				donateHref && (
+					<div class="text-center">
+						<a href={donateHref} class:list={[btn, 'mx-auto inline-flex w-full max-w-[313px] font-bold hover:opacity-85']}>Make a Donation :)</a>
+					</div>
+				)
+			}
+		</div>
+
+		<a href="#welcome" class="mx-auto mt-14 block size-[60px]" aria-label="Back to the top">
+			<svg viewBox="0 0 512 512" class="size-[60px] fill-[#13a49f]" aria-hidden="true"><path d={upArrow} /></svg>
+		</a>
+	</div>
+</main>

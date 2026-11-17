@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ClambakePage from '../components/ClambakePage.astro';
+import { newTestament } from '../data/clambake';
+
+const intro = `
+<p><strong>Welcome! Download your Sunday School lessons here.</strong></p>
+<p>As you can see from the download links below, our New Testament lessons are now arriving. We are intending to post one or two a week until all 50 are available. The Old Testament lessons are complete, <a href="/clambake-old-testament/" class="text-[#008fff]">HERE.</a></p>
+<p>Feel free to share these links with other workers in your Sunday School Ministry. This way, your co-workers can see not only the lesson plan that you intend to teach, they can come here to see and understand all the student activities as well.</p>
+<p>Each download contains two zip folders, one containing the four age-level lesson plans and student pages, and one containing "CLAModules"--optional items such as take-home papers and puppet skits.</p>
+<p>As soon as possible these existing links will be changed from download links to <strong>blog posts</strong> with in-depth descriptions of each Sunday's four lessons as well as illustrations and perhaps even videos. The blogs will also be where you'll find any future updates to the lessons.</p>`;
+
+const linksIntro = `
+<p><strong>Recommended:</strong></p>
+<p>Make a folder on your computer's desktop. Call it something like <strong>CLAMbake.</strong> Set your downloads to go to that folder. Easy to find! These folders are easy to transfer to your home or church computer on a USB stick.</p>
+<p><strong>Our latest New Testament lesson is #30 of fifty planned. All Old Testament lessons are completed.</strong></p>`;
+---
+
+<Layout title="CLAMbake New Testament - clamcentral.com">
+	<ClambakePage
+		title="CLAMbake New Testament Sunday School Links"
+		switchLabel="Choose Old Testament Instead"
+		switchHref="/clambake-old-testament/"
+		pagesImage="/images/clambake-nt-pages.webp"
+		pagesImageHeight={590}
+		lessons={newTestament}
+		introHtml={intro}
+		linksIntroHtml={linksIntro}
+	/>
+</Layout>

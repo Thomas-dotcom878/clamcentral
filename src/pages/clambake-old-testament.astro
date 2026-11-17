@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ClambakePage from '../components/ClambakePage.astro';
+import { oldTestament, holidays } from '../data/clambake';
+import { donateUrl } from '../data/site';
+
+const intro = `
+<p><strong>Welcome! Download your Sunday School lessons here.</strong></p>
+<p>Feel free to share these links with other workers in your Sunday School Ministry. This way, your co-workers can see not only the lesson plan that you intend to teach, they can come here to see and understand all the student activities as well.</p>
+<p>Each download contains two zip folders, one containing the four age-level lesson plans and student pages, and one containing "CLAModules"--optional items such as take-home papers and puppet skits.</p>
+<p>As soon as possible these existing links will be changed from download links to <strong>blog posts</strong> with in-depth descriptions of each Sunday's four lessons as well as illustrations and perhaps even videos. The blogs will also be where you'll find any future updates to the lessons.</p>
+<p>Scroll down for the Christmas and Easter lessons.</p>`;
+
+const linksIntro = `
+<p><strong>Recommended:</strong></p>
+<p>Make a folder on your computer's desktop. Call it something like <strong>CLAMbake.</strong> Set your downloads to go to that folder. Easy to find! The total size on disk of all contents combined is only about 1.73 gigs, small enough to transfer to your home or church computer on a USB stick.</p>`;
+---
+
+<Layout title="CLAMbake Old Testament - clamcentral.com">
+	<ClambakePage
+		title="CLAMbake Old Testament Sunday School"
+		switchLabel="Choose New Testament Instead"
+		switchHref="/clambake-new-testament/"
+		pagesImage="/images/clambake-ot-pages.webp"
+		pagesImageHeight={520}
+		lessons={oldTestament}
+		introHtml={intro}
+		linksIntroHtml={linksIntro}
+		afterLinks={holidays}
+		donateHref={donateUrl}
+	/>
+</Layout>
