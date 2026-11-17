@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import RegularsSignup from '../components/RegularsSignup.astro';
+import Card from '../components/LinkOrDiv.astro';
 
 const steps = [
 	{
@@ -8,18 +9,21 @@ const steps = [
 		bg: 'bg-[rgba(255,225,225,0.5)]',
 		body: '<p>“Go and <strong>make disciples</strong> of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to obey everything I have commanded you.”<br />Matthew 28:19,20.</p>',
 		close: 'Step One: The foundation for your best, most effective Children’s Ministry and Sunday School.',
+		href: '', // TODO: add a link for Step One
 	},
 	{
 		title: '2. Build Your Sunday School',
 		bg: 'bg-[rgba(251,228,191,0.5)]',
 		body: '<p>Our <strong>CLAMbake Curriculum</strong> two-year through the Bible Sunday School program <strong>automatically makes you and your teachers successful disciplers,</strong> launching kids on their lifelong adventures with Jesus.</p>',
 		close: 'Step Two makes reaching the first Step a done deal.',
+		href: '/clambake-sample-lessons/',
 	},
 	{
 		title: '3. Expand Your Impact',
 		bg: 'bg-[rgba(184,232,191,0.5)]',
 		body: '<p><strong>KIDS PARTY</strong> features three years of games and Bible story events aimed at Upper Elementary kids. Kids Party is <strong>a super successful way to attract new kids and their families.</strong> More age-level “kid magnets” are planned.</p>',
 		close: 'Step Three makes it nearly impossible NOT to grow your group!',
+		href: '/kids-party-events-program/',
 	},
 ];
 ---
@@ -49,11 +53,11 @@ const steps = [
 			<div class="mx-auto mt-6 grid max-w-[1164px] gap-[45px] md:grid-cols-3">
 				{
 					steps.map((s) => (
-						<div class:list={['rounded-[5px] border-[5px] border-white/85 px-[26px] pt-4 pb-7 text-[17px] leading-[1.4] shadow-[0_8px_12px_rgba(0,0,0,0.25)] transition-transform duration-300 hover:scale-95', s.bg]}>
+						<Card href={s.href || undefined} class={['block rounded-[5px] border-[5px] border-white/85 px-[26px] pt-4 pb-7 text-[17px] leading-[1.4] shadow-[0_8px_12px_rgba(0,0,0,0.25)] transition-transform duration-300 hover:scale-95', s.bg].join(' ')}>
 							<h3 class="mb-3 text-[22px] leading-[1.4] text-ink">{s.title}</h3>
 							<div set:html={s.body} />
 							<p class="mt-6 mb-0 text-center font-bold">{s.close}</p>
-						</div>
+						</Card>
 					))
 				}
 			</div>
