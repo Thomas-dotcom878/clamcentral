@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { introduction, blaPacks, latestVideos } from '../data/bla-packs';
+import { newTestament } from '../data/clambake';
+
+// The three newest New Testament lessons that are ready, newest first (updates automatically).
+const latestLessons = newTestament.filter((l) => l.href).slice(-3).reverse();
+
+const slate = 'bg-[#8599ae] font-button tracking-[2px] text-white rounded-[5px] hover:opacity-85';
+const card = 'flex items-start gap-6 rounded-[8px] px-6 py-3 shadow-[0_19px_100px_rgba(0,0,0,0.09)] md:gap-[42px] md:px-[44px]';
+---
+
+<Layout title="Bible Learning Activities - clamcentral.com">
+	<main class="bg-page px-4 pt-12 pb-20 lg:px-0">
+		<div class="mx-auto max-w-[1080px]">
+			<h1 class="text-center text-[36px] leading-[1.3] font-bold text-ink lg:text-[50px]">Latest Resources and Updates</h1>
+			<p class="mx-auto mt-2 max-w-[994px] text-center text-[20px] leading-[1.4] lg:text-[22px]">BLA Packs. Videos. CLAMbake NT Lessons. Every item has a download link.</p>
+
+			<!-- Introduction -->
+			<div class:list={[card, 'mt-10 bg-[#fff9e4]']}>
+				<img src={introduction.image} alt="" width="103" height="138" class="w-[80px] shrink-0 md:w-[103px]" />
+				<div class="pt-2 text-[18px] leading-[1.4]">
+					<h2 class="text-[20px] leading-[1.4] font-bold text-ink md:text-[24px]">{introduction.title}</h2>
+					<p class="mb-1">{introduction.text}</p>
+					<a href={introduction.href} class="font-bold text-[#2d8ae6]">DOWNLOAD</a>
+				</div>
+			</div>
+
+			<!-- 1. BLA Packs -->
+			<h2 class="mt-24 text-center text-[26px] leading-[1.4] font-bold lg:text-[30px]">1. The Bible Learning Activities Packs</h2>
+			<p class="mx-auto mt-1 max-w-[1034px] text-center text-[20px] leading-[1.4] lg:text-[22px]">The BLA Packs List of Topics page makes it easy to find a Pack resource for your next Sunday School lesson. The list is growing rapidly.</p>
+			<div class="mt-2 text-center">
+				<a href="/bible-packs-list-of-topics/" class:list={[slate, 'inline-block w-full max-w-[562px] px-[18px] py-[10px] text-[19px] leading-[1.2] lg:text-[23px]']}>Go to the BLA Packs List of Topics</a>
+			</div>
+
+			<div class="mt-12 space-y-[25px]">
+				{
+					blaPacks.map((p) => (
+						<div class:list={[card, 'bg-white']}>
+							<img src={`/images/bla/${p.image}.webp`} alt="" width="106" height="137" loading="lazy" class="w-[80px] shrink-0 md:w-[106px]" />
+							<div class="pt-2 text-[18px] leading-[1.4]">
+								<h3 class="text-[20px] leading-[1.4] font-bold text-ink md:text-[24px]">{p.title}</h3>
+								<p class="mb-1" set:html={p.text} />
+								<a href={p.href} class="font-bold text-[#2d8ae6]">DOWNLOAD</a>
+							</div>
+						</div>
+					))
+				}
+			</div>
+
+			<!-- 2. Videos -->
+			<h2 class="mt-20 text-center text-[26px] leading-[1.4] font-bold lg:text-[30px]">2. The Latest Videos</h2>
+			<div class="mt-2 grid gap-[17px] md:grid-cols-3">
+				{
+					latestVideos.map((id) => (
+						<iframe
+							class="aspect-video w-full"
+							src={`https://www.youtube-nocookie.com/embed/${id}?rel=0`}
+							title="CLAMcentral video"
+							loading="lazy"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen
+						/>
+					))
+				}
+			</div>
+
+			<!-- 3. Latest NT lessons -->
+			<h2 class="mt-12 text-center text-[26px] leading-[1.4] font-bold lg:text-[30px]">3. The Latest Clambake New Testament Lessons</h2>
+			<div class="mt-2 grid gap-[15px] md:grid-cols-3">
+				{latestLessons.map((l) => <a href={l.href} class:list={[slate, 'flex min-h-[58px] items-center justify-center px-4 text-center text-[18px]']}>{l.label}</a>)}
+			</div>
+		</div>
+	</main>
+</Layout>
