@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RegularsSignup from '../components/RegularsSignup.astro';
+
+const steps = [
+	{
+		title: '1. Understand God’s Vision',
+		bg: 'bg-[rgba(255,225,225,0.5)]',
+		body: '<p>“Go and <strong>make disciples</strong> of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to obey everything I have commanded you.”<br />Matthew 28:19,20.</p>',
+		close: 'Step One: The foundation for your best, most effective Children’s Ministry and Sunday School.',
+	},
+	{
+		title: '2. Build Your Sunday School',
+		bg: 'bg-[rgba(251,228,191,0.5)]',
+		body: '<p>Our <strong>CLAMbake Curriculum</strong> two-year through the Bible Sunday School program <strong>automatically makes you and your teachers successful disciplers,</strong> launching kids on their lifelong adventures with Jesus.</p>',
+		close: 'Step Two makes reaching the first Step a done deal.',
+	},
+	{
+		title: '3. Expand Your Impact',
+		bg: 'bg-[rgba(184,232,191,0.5)]',
+		body: '<p><strong>KIDS PARTY</strong> features three years of games and Bible story events aimed at Upper Elementary kids. Kids Party is <strong>a super successful way to attract new kids and their families.</strong> More age-level “kid magnets” are planned.</p>',
+		close: 'Step Three makes it nearly impossible NOT to grow your group!',
+	},
+];
+---
+
+<Layout title="3-Steps to Lifelong Discipleship - clamcentral.com">
+	<main>
+		<!-- ===== Intro (dark teal) ===== -->
+		<section class="bg-teal-form px-4 pt-16 pb-14 text-center text-white">
+			<img src="/images/3-steps-logo-white.webp" alt="3-Steps to Lifelong Discipleship" width="1200" height="424" class="mx-auto h-auto w-full max-w-[594px]" fetchpriority="high" />
+			<div class="mx-auto mt-9 max-w-[1078px]">
+				<p class="mb-0 text-[26px] leading-[1.3] font-bold lg:text-[32px]" style="font-family: Barlow, Poppins, sans-serif">These are the</p>
+				<h1 class="text-[32px] leading-[1.4] font-bold text-[#9ef0ff] lg:text-[43px]">Three Steps to Lifelong Discipleship...</h1>
+				<ol class="mt-4 space-y-[22px] text-[21px] leading-[1.2] font-bold lg:text-[27px]">
+					<li>1. Clearly Understand God’s Vision for Your Ministry</li>
+					<li>2. &nbsp;Build a Sunday School that Serves God’s Vision</li>
+					<li>3. &nbsp;Become a Magnet for more and more Kids and Families</li>
+				</ol>
+				<p class="mt-6 mb-0 text-[20px] leading-[1.4] lg:text-[24px]">
+					Newbie or seasoned pro, the 3-Steps program will help you skill up, skip the stumbling learning curve, and launch children into a lifetime of adventure with our Lord.
+				</p>
+			</div>
+		</section>
+
+		<!-- ===== The three steps ===== -->
+		<section class="bg-page px-4 pt-12 pb-20">
+			<h2 class="text-center text-[28px] leading-[1.4] font-bold text-ink lg:text-[35px]">Click to Explore these Three Steps...</h2>
+			<div class="mx-auto mt-6 grid max-w-[1164px] gap-[45px] md:grid-cols-3">
+				{
+					steps.map((s) => (
+						<div class:list={['rounded-[5px] border-[5px] border-white/85 px-[26px] pt-4 pb-7 text-[17px] leading-[1.4] shadow-[0_8px_12px_rgba(0,0,0,0.25)] transition-transform duration-300 hover:scale-95', s.bg]}>
+							<h3 class="mb-3 text-[22px] leading-[1.4] text-ink">{s.title}</h3>
+							<div set:html={s.body} />
+							<p class="mt-6 mb-0 text-center font-bold">{s.close}</p>
+						</div>
+					))
+				}
+			</div>
+
+			<div class="mx-auto mt-12 max-w-[1072px] text-[16px] leading-[1.4]">
+				<p>When some friends and I launched Kauai Christian Fellowship here in Hawaii in 1991, we prayed that God would use us to put many people on the path to a lifelong love for Jesus Christ. My part in reaching that goal has been to build a children’s ministry that began the path from childhood to adult-level commitment to the Lord, in support of godly dads and moms.</p>
+				<p>And we’ve had great success. The <strong>3-Steps to Lifelong Discipleship</strong> program gives you the exact system, resources, and guidance to build a ministry with a high percentage of just what this world needs more of: People that love the Lord all life long. This is not an overly complex radical change to your ministry. It’s a few simple tweaks.</p>
+				<p class="text-center font-bold">3-Steps is a Project In Progress. There is much to be done, but good news: There is much already finished and ready to assist you in your ministry.</p>
+			</div>
+
+			<img src="/images/3-steps-logo.webp" alt="3-Steps to Lifelong Discipleship" width="740" height="238" loading="lazy" class="mx-auto mt-14 h-auto w-full max-w-[365px]" />
+		</section>
+
+		<RegularsSignup />
+	</main>
+</Layout>
