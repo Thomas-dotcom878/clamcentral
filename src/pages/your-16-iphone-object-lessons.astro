@@ -1,0 +1,36 @@
+---
+// Rebuilt from the live WordPress page layout.
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Your 16 iPhone Object Lessons! - clamcentral.com">
+	<main class="px-4 pt-12 pb-20" style="background: #fffdf4">
+		<div class="mx-auto max-w-[1080px]">
+			<div>
+				<img src="/images/clamcentral-logo.webp" alt="" width="600" height="121" loading="lazy" class="mx-auto h-auto w-full" style="max-width:300px" />
+			</div>
+			<div style="margin-top:21px">
+				<h1 style="font-size:clamp(34px, 3.57vw, 50px);line-height:1.30;color:rgb(51, 51, 51);text-align:center"><strong>Your 16 Free iPhone Object Lessons</strong></h1>
+			</div>
+			<div style="margin-top:21px">
+				<img src="/images/pages/iphone-banner.webp" alt="" width="1494" height="690" loading="lazy" class="mx-auto h-auto w-full" style="max-width:747px" />
+			</div>
+			<div style="margin-top:20px">
+				<p style="font-size:clamp(18px, 1.57vw, 22px);line-height:1.60;color:rgb(70, 70, 70);text-align:center"><strong>Love object lessons?</strong> Join us in our quest for the elusive <strong>Perfect Object Lesson!</strong> And receive your free bonus...</p>
+			</div>
+			<div style="margin-top:3px">
+				<h3 style="font-size:clamp(18px, 1.79vw, 25px);line-height:1.40;color:rgb(51, 51, 51);text-align:center"><strong>The iPhone (and Android) Object Lessons PDF Guide!</strong></h3>
+				<p style="font-size:20px;line-height:1.60;color:rgb(70, 70, 70);text-align:center"><strong>The form below will take you to a download link <strong>to get your copy of iPhone Object Lessons</strong>. </strong></p>
+			</div>
+			<div>
+				<p style="font-size:clamp(18px, 1.57vw, 22px);line-height:1.60;color:rgb(70, 70, 70);text-align:center">We will notify you with a simple newsletter each time we post a new video at The Object Lesson Channel. You can unsubscribe anytime, and the Guide is yours to keep.</p>
+			</div>
+			<!-- TODO: connect to ActiveCampaign -->
+			<form class="mx-auto mt-8 grid max-w-[1041px] gap-[15px] md:grid-cols-[1fr_1fr_227px]" action="#" method="post">
+				<input type="text" name="name" placeholder="Name" aria-label="Name" class="h-[51px] rounded-[3px] border border-[#ccc] bg-white px-4 font-button text-[14px]" />
+				<input type="email" name="email" placeholder="Email" aria-label="Email" class="h-[51px] rounded-[3px] border border-[#ccc] bg-white px-4 font-button text-[14px]" />
+				<button type="submit" class="h-[51px] text-[20px] font-bold text-white hover:opacity-85" style="font-family: Roboto, Arial, sans-serif;background:rgb(38, 79, 111)">Sign Up</button>
+			</form>
+		</div>
+	</main>
+</Layout>

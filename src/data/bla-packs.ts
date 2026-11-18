@@ -51,7 +51,7 @@ export const blaPacks = [
     text: 'Kids “Do It Yourself”--drawing the faces of Bible characters and animals as they read these comic versions of Bible stories. Be sure to read the <em>real</em> stories to them! Thirteen comics.' },
   { title: 'BLA Pack: Four Corners - zipped folder', image: 'four-corners', href: '/bla-packs/four-corners-pack.zip',
     text: 'The well-known action game of Four Corners is a first-rate way get kids up and moving around the room and a nice way to launch a discussion. Thirteen games.' },
-  { title: 'BLA Pack: Meaningful Motions - PDF file', image: 'meaningful-motions', href: '/bla-packs/meaningful-motions-pack.zip',
+  { title: 'BLA Pack: Meaningful Motions - zipped folder', image: 'meaningful-motions', href: '/bla-packs/meaningful-motions-pack.zip',
     text: 'Teaching your kids super-simple sign language phrases is a fun way to send three or four minutes interacting with the entire class at once. Over eighty illustrated phrases here.' },
 ];
 
