@@ -1,0 +1,25 @@
+---
+// A video hosted at Bunny.net (moved over from the WordPress Presto Player).
+interface Props {
+	src: string; // the .m3u8 playlist address
+	poster: string;
+	width?: string | number;
+}
+const { src, poster, width = 568 } = Astro.props;
+---
+
+<video class="bunny-video mx-auto block aspect-video w-full bg-black" style={`max-width:${width}px`} controls playsinline preload="none" poster={poster} data-src={src}></video>
+
+<script is:inline src="https://cdn.jsdelivr.net/npm/hls.js@1/dist/hls.min.js"></script>
+<script is:inline>
+	document.querySelectorAll('video.bunny-video').forEach((v) => {
+		const src = v.dataset.src;
+		if (v.canPlayType('application/vnd.apple.mpegurl')) {
+			v.src = src;
+		} else if (window.Hls && window.Hls.isSupported()) {
+			const hls = new window.Hls();
+			hls.loadSource(src);
+			hls.attachMedia(v);
+		}
+	});
+</script>

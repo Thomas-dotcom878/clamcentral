@@ -1,0 +1,24 @@
+---
+// Rebuilt from the live WordPress page layout.
+import Layout from '../layouts/Layout.astro';
+import RegularsSignup from '../components/RegularsSignup.astro';
+---
+
+<Layout title="Newsletter - clamcentral.com">
+	<main class="px-4 pt-12 pb-20" style="background: #fffdf4">
+		<div class="mx-auto max-w-[1080px]">
+			<div>
+				<img src="/images/clamcentral-logo.webp" alt="" width="600" height="121" loading="lazy" class="mx-auto h-auto w-full" style="max-width:266px" />
+			</div>
+			<div style="margin-top:21px">
+				<h1 style="font-size:clamp(35px, 3.64vw, 51px);line-height:1.30;color:rgb(12, 17, 21);text-align:center;font-weight:700">GRAB OUR MONTHLY NEWSLETTER!</h1>
+			</div>
+			<div style="margin-top:2px">
+				<p style="font-size:clamp(19px, 2.00vw, 28px);line-height:1.60;color:rgb(0, 0, 0);text-align:center">God has called you to frontline Children's Ministry. And He's called us to supply the training and resources for your success.</p>
+			</div>
+			<div style="margin-top:70px">
+				<RegularsSignup heading="" sectionBg="transparent" perks={["<strong>Follow the progress</strong> of our growing list of Kids Ministry resources.", "Be the first to know about<strong>new resources</strong> as they arrive.", "The newsletter is sent to your email address <strong>once a month</strong> (more or less predictably!)"]} />
+			</div>
+		</div>
+	</main>
+</Layout>

@@ -7,6 +7,7 @@ interface Props {
 	buttonLabel?: string;
 	sectionBg?: string;
 	boxBg?: string;
+	boxHeading?: string;
 }
 const {
 	heading = 'Grab our NEWSLETTER!',
@@ -18,13 +19,14 @@ const {
 	buttonLabel = 'Sign Up',
 	sectionBg = '#ffecc5',
 	boxBg = '#707070',
+	boxHeading = '',
 } = Astro.props;
 ---
 
 <section class="px-4 py-14" style={`background: ${sectionBg}`}>
 	<div class="mx-auto grid max-w-[856px] items-center gap-8 md:grid-cols-[453px_381px] md:gap-[22px]">
 		<div class="text-[16px] leading-[1.4]">
-			<p class="mb-5 text-center text-[24px] font-bold">{heading}</p>
+			{heading && <p class="mb-5 text-center text-[24px] font-bold">{heading}</p>}
 			<ul class="space-y-3">
 				{
 					perks.map((p) => (
@@ -37,7 +39,7 @@ const {
 			</ul>
 		</div>
 		<div class="px-[21px] pt-10 pb-6 text-center text-white" style={`background: ${boxBg}`}>
-			<h3 class="text-[27px] leading-[1.4] font-bold">Become a <span class="text-[#ffd75c]">Regular</span> here!</h3>
+			{boxHeading ? <h3 class="text-[27px] leading-[1.4] font-bold">{boxHeading}</h3> : <h3 class="text-[27px] leading-[1.4] font-bold">Become a <span class="text-[#ffd75c]">Regular</span> here!</h3>}
 			<p class="mt-1 text-[18px]">100% Free. Leave anytime.</p>
 			<form class="mt-6 space-y-[10px]" action="#" method="post">
 				<input type="text" name="name" placeholder="Your Name" aria-label="Your Name" class="h-[56px] w-full bg-[#f8f8f8] px-4 font-button text-[14px] text-black/75" />

@@ -25,12 +25,9 @@ import Layout from '../layouts/Layout.astro';
 			<div>
 				<p style="font-size:clamp(18px, 1.57vw, 22px);line-height:1.60;color:rgb(70, 70, 70);text-align:center">We will notify you with a simple newsletter each time we post a new video at The Object Lesson Channel. You can unsubscribe anytime, and the Guide is yours to keep.</p>
 			</div>
-			<!-- TODO: connect to ActiveCampaign -->
-			<form class="mx-auto mt-8 grid max-w-[1041px] gap-[15px] md:grid-cols-[1fr_1fr_227px]" action="#" method="post">
-				<input type="text" name="name" placeholder="Name" aria-label="Name" class="h-[51px] rounded-[3px] border border-[#ccc] bg-white px-4 font-button text-[14px]" />
-				<input type="email" name="email" placeholder="Email" aria-label="Email" class="h-[51px] rounded-[3px] border border-[#ccc] bg-white px-4 font-button text-[14px]" />
-				<button type="submit" class="h-[51px] text-[20px] font-bold text-white hover:opacity-85" style="font-family: Roboto, Arial, sans-serif;background:rgb(38, 79, 111)">Sign Up</button>
-			</form>
+			<div style="margin-top:46px">
+				<form class="mx-auto grid max-w-[1041px] gap-[15px] md:grid-cols-[1fr_1fr_227px]" action="#" method="post"><!-- TODO: connect to ActiveCampaign --><input type="text" name="name" placeholder="Name" aria-label="Name" class="h-[51px] w-full rounded-[3px] border border-[#ccc] bg-white px-4 font-button text-[14px]" /><input type="email" name="email" placeholder="Email" aria-label="Email" class="h-[51px] w-full rounded-[3px] border border-[#ccc] bg-white px-4 font-button text-[14px]" /><button type="submit" class="h-[54px] w-full font-bold text-white hover:opacity-85" style="font-family: Roboto, Arial, sans-serif;font-size:20px;letter-spacing:1px;background:rgb(38, 79, 111)">Sign Up</button></form>
+			</div>
 		</div>
 	</main>
 </Layout>
