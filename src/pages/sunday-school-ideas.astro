@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RegularsSignup from '../components/RegularsSignup.astro';
+import { resources } from '../data/resources';
+const perks = ["Follow the progress of <strong>Sunday School Ideas</strong> and the growing list of Kids Ministry resources.", "Be the first to know about<strong> </strong><strong>new resources</strong> as they arrive.", "The newsletter is sent to your email address <strong>once a month</strong> (more or less predictably!)"];
+---
+
+<Layout title="Sunday School Ideas - clamcentral.com">
+	<main>
+		<!-- ===== Welcome (dark teal) ===== -->
+		<section class="bg-teal-form px-4 pt-9 pb-12 text-center text-[#fefbe2]">
+			<div class="mx-auto max-w-[1080px]">
+				<img src="/images/ideas/header-banner.webp" alt="Sunday School Ideas" width="2160" height="766" class="h-auto w-full" fetchpriority="high" />
+				<h1 class="mt-8 text-[clamp(26px,2.7vw,38px)] leading-[1.3] font-bold">Hi! Tom Finley here...</h1>
+				<p class="mx-auto mt-3 max-w-[1038px] text-[clamp(20px,2vw,28px)] leading-[1.3]">Do you love to serve God by working with children in your church? You are in the right place! Check out this growing list of FREE Ideas, Strategies and Resources:</p>
+				<img src="/images/ideas/covers-logo.webp" alt="CLAMcentral resource covers" width="1470" height="362" class="mx-auto mt-8 h-auto w-full max-w-[1040px]" />
+			</div>
+		</section>
+
+		<!-- ===== Resources ===== -->
+		<section class="bg-[#fefbe2] px-4 py-12">
+			<div class="mx-auto max-w-[1080px] space-y-12">
+				{
+					resources.map((r) => (
+						<div class="flex flex-col gap-5 sm:flex-row sm:gap-4">
+							<a href={r.href} class="shrink-0 self-center sm:self-start sm:pt-5">
+								<img src={`/images/ideas/${r.image}.webp`} alt="" width="149" height="190" loading="lazy" class="h-auto w-[149px]" />
+							</a>
+							<div class="text-[#464646]">
+								<h2 class="text-[clamp(26px,2.6vw,36px)] leading-[1.3] font-bold">{r.title}</h2>
+								{r.subtitle && <p class="mt-1 mb-2 text-[clamp(20px,1.9vw,27px)] leading-[1.4] font-bold">{r.subtitle}</p>}
+								<p class="mb-2 text-[19px] leading-[1.6]" set:html={r.text} />
+								<p class="mb-0 text-[clamp(20px,1.9vw,27px)] leading-[1.6]"><a href={r.href}>{r.linkLabel}</a></p>
+							</div>
+						</div>
+					))
+				}
+			</div>
+		</section>
+
+		<!-- ===== 3-Steps now open (dark teal) ===== -->
+		<section class="bg-teal-form px-4 py-12 text-white">
+			<div class="mx-auto max-w-[735px]">
+				<p class="mb-2 text-center text-[clamp(36px,3.9vw,54px)] leading-[1.35] font-bold">NOW OPEN</p>
+				<p class="mb-6 text-center text-[clamp(26px,2.7vw,38px)] leading-[1.35] font-bold">The 3-Steps to Lifelong Discipleship Program</p>
+				<p class="mx-auto max-w-[626px] text-[20px] leading-[1.6] lg:text-[22px]">This is your All-Access Pass to a wonderful program we've used for decades to fulfill the Lord's Great Commission in the lives of the kids we work with. The program will work for you! Check it out...</p>
+				<p class="mx-auto mb-0 max-w-[626px] text-[clamp(20px,1.9vw,27px)] leading-[1.6]"><a href="/3-steps-to-lifelong-discipleship-2/">Learn more...</a></p>
+			</div>
+		</section>
+
+		<RegularsSignup heading="Grab the NEWSLETTER!" perks={perks} buttonLabel="JOIN!" sectionBg="#fffbe7" boxBg="#383838" />
+
+		<!-- ===== About Tom ===== -->
+		<section class="bg-[#fffbe7] px-4 pt-4 pb-16 text-center">
+			<img src="/images/tom.webp" alt="Tom Finley" width="482" height="482" loading="lazy" class="mx-auto size-[163px]" />
+			<p class="mx-auto mt-6 max-w-[696px] text-[20px] leading-[1.6] text-[#464646] lg:text-[22px]"><strong>TOM FINLEY</strong> was the Children's Pastor at Kauai Christian Fellowship for 25 years, retiring to establish Christ's Love And Majesty Ministries (the CLAM in CLAMcentral). He is a Zondervan author of books for kids and their leaders, and served as the Managing Editor of the Youth Department at Gospel Light Publications.</p>
+		</section>
+	</main>
+</Layout>

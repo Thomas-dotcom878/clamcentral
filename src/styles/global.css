@@ -30,4 +30,11 @@
   p {
     margin-bottom: 0.9em;
   }
+
+  /* Links inside text: bold blue, as on the WordPress site */
+  p a,
+  li a {
+    color: #2d8ae6;
+    font-weight: 700;
+  }
 }

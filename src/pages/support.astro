@@ -1,0 +1,20 @@
+---
+// Generated from the live WordPress page, then tidied by hand where needed.
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Support - clamcentral.com">
+	<main class="px-4 pt-12 pb-20" style="background: #fffce9">
+		<div class="mx-auto max-w-[1038px]">
+			<h1 style="font-size:clamp(34px, 3.57vw, 50px);line-height:1.30;color:rgb(51, 51, 51);text-align:center;margin-bottom:16px"><strong>Contact Us!</strong></h1>
+			<p style="font-size:clamp(18px, 1.57vw, 22px);line-height:1.40;color:rgb(70, 70, 70);text-align:center">You'll receive an email from us soon. Please, as they say at all websites, check your spam filter to be sure. You can use this form to request support, ask questions, make suggestions or plea for mercy. When you hit the Send Message button you'll hop back to our Home page.</p>
+			<!-- TODO: connect this form to an email service (it doesn't send yet) -->
+			<form class="mx-auto mt-10 max-w-[815px] space-y-[10px] rounded-[6px] bg-[#7bb1af] p-[11px]" action="#" method="post">
+				<input type="text" name="name" placeholder="Name" aria-label="Name" class="h-[55px] w-full rounded-[4px] bg-white px-4 font-button text-[16px]" />
+				<input type="email" name="email" placeholder="Email" aria-label="Email" required class="h-[55px] w-full rounded-[4px] bg-white px-4 font-button text-[16px]" />
+				<textarea name="message" placeholder="Type your message here..." aria-label="Message" rows="5" class="w-full rounded-[4px] bg-white px-4 py-3 font-button text-[16px]"></textarea>
+				<div class="py-3 text-center"><button type="submit" class="w-full max-w-[650px] rounded-[14px] bg-[#05053d] py-4 font-button text-[18px] text-white hover:opacity-85">Send message</button></div>
+			</form>
+		</div>
+	</main>
+</Layout>
