@@ -1,4 +1,6 @@
 ---
+import AcFields from './AcFields.astro';
+import { activeCampaign } from '../data/site';
 // Shared layout for the CLAMbake New Testament and Old Testament download pages.
 import type { Lesson } from '../data/clambake';
 
@@ -54,9 +56,9 @@ const upArrow = 'M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 215c9.4 9
 			<p>Although no sign up is required to download, if you do sign up I’ll be able to send you any future updates and notifications. Sign up even if you’ve already signed on as a Beta Tester or any other member. Makes my work load almost easy!</p>
 			<p>And to make this worth your while the free downloads below will remain free for you even if someday I need to charge.</p>
 		</div>
-		<!-- TODO: connect to ActiveCampaign -->
-		<form class="mx-auto mt-6 grid max-w-[1041px] gap-[15px] md:grid-cols-[1fr_1fr_227px]" action="#" method="post">
-			<input type="text" name="name" placeholder="Name" aria-label="Name" class="h-[51px] rounded-[3px] border border-[#ccc] bg-white px-4 font-button text-[14px]" />
+		<form class="mx-auto mt-6 grid max-w-[1041px] gap-[15px] md:grid-cols-[1fr_1fr_227px]" action={activeCampaign.action} method="post">
+<AcFields />
+			<input type="text" name="fullname" placeholder="Name" aria-label="Name" class="h-[51px] rounded-[3px] border border-[#ccc] bg-white px-4 font-button text-[14px]" />
 			<input type="email" name="email" placeholder="Email" aria-label="Email" required class="h-[51px] rounded-[3px] border border-[#ccc] bg-white px-4 font-button text-[14px]" />
 			<button type="submit" class:list={['h-[51px] text-[20px] font-bold text-white hover:opacity-85', teal]} style="font-family: Roboto, Arial, sans-serif">Sign Up</button>
 		</form>

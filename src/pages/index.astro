@@ -1,4 +1,6 @@
 ---
+import AcFields from '../components/AcFields.astro';
+import { activeCampaign } from '../data/site';
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import { donateUrl } from '../data/site';
@@ -123,9 +125,9 @@ const star = 'M46.976,57.227c-0.422,0-0.834-0.104-1.228-0.312l-13.167-6.921c-0.6
 				<p class="mx-auto max-w-[1064px]">
 					<strong>Join the over 1,000 members on our mailing lists.</strong> Sign up to receive the monthly CLAMcentral Regulars Newsletter. The Newsletter will alert you to any and all updates to the BLA Packs and other key Children’s Ministry resources.
 				</p>
-				<!-- TODO: connect to ActiveCampaign (see README) -->
-				<form id="signup" class="mt-8 grid gap-[15px] md:grid-cols-[1fr_1fr_236px]" action="#" method="post">
-					<input type="text" name="name" placeholder="Name" aria-label="Name" class="h-[51px] rounded-[3px] bg-white px-4 font-button text-[14px] text-[#111]" />
+				<form id="signup" class="mt-8 grid gap-[15px] md:grid-cols-[1fr_1fr_236px]" action={activeCampaign.action} method="post">
+<AcFields />
+					<input type="text" name="fullname" placeholder="Name" aria-label="Name" class="h-[51px] rounded-[3px] bg-white px-4 font-button text-[14px] text-[#111]" />
 					<input type="email" name="email" placeholder="Email" aria-label="Email" required class="h-[51px] rounded-[3px] bg-white px-4 font-button text-[14px] text-[#111]" />
 					<button type="submit" class="h-[51px] rounded-[7px] bg-teal-form text-[24px] font-bold tracking-[1px] text-white transition-opacity hover:opacity-85" style="font-family: Roboto, Arial, sans-serif">Sign Up</button>
 				</form>

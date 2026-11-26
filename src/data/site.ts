@@ -31,3 +31,11 @@ export const footerLinks = [
   { label: 'Donate', href: donateUrl },
   { label: 'Contact Us', href: '/support/' },
 ];
+
+// ActiveCampaign forms. Each website form sends to one of these.
+// The values come from the form's embed code in ActiveCampaign (Website → Forms → Integrate).
+export const activeCampaign = {
+	action: 'https://clamcentral.activehosted.com/proc.php',
+	// "Website Newsletter" form (ActiveCampaign form 3)
+	newsletter: { u: '6B077CF411E7D', f: '3', s: '', c: '0', m: '0', act: 'sub', v: '2', or: 'b09bb369-a7fb-432f-80a9-d4c00d6d2852' },
+};

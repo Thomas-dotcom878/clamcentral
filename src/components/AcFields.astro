@@ -1,0 +1,8 @@
+---
+// Hidden fields that tell ActiveCampaign which form a sign-up belongs to.
+import { activeCampaign } from '../data/site';
+interface Props { form?: 'newsletter'; }
+const { form = 'newsletter' } = Astro.props;
+const fields = activeCampaign[form];
+---
+{Object.entries(fields).map(([name, value]) => <input type="hidden" name={name} value={value} />)}
