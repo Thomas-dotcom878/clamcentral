@@ -1,7 +1,7 @@
 ---
 // Hidden fields that tell ActiveCampaign which form a sign-up belongs to.
 import { activeCampaign } from '../data/site';
-interface Props { form?: 'newsletter'; }
+interface Props { form?: 'newsletter' | 'iphone' | 'toolbox' | 'links'; }
 const { form = 'newsletter' } = Astro.props;
 const fields = activeCampaign[form];
 ---

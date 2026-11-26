@@ -1,6 +1,8 @@
 ---
 // Generated from the live WordPress page, then tidied by hand where needed.
 import Layout from '../layouts/Layout.astro';
+import AcFields from '../components/AcFields.astro';
+import { activeCampaign } from '../data/site';
 ---
 
 <Layout title="Links - clamcentral.com">
@@ -12,9 +14,8 @@ import Layout from '../layouts/Layout.astro';
 				<img src="/images/object-lessons-cover.webp" alt="iPhone Object Lessons" width="226" height="277" class="w-[171px] shrink-0" />
 				<div class="pt-6"><p style="font-size:16px;line-height:1.40;color:rgb(0, 0, 0);text-align:center">Each time we post a new video at <strong>The Object Lessons Channel</strong> you'll get an email with a link to the video and, if there is a PDF resource available for that video, a link to that as well. When you fill out and submit the form we will immediately send you a confirmation email.</p><p style="font-size:16px;line-height:1.40;color:rgb(0, 0, 0);text-align:center">The email has a link to download the <strong>free iPhone Object Lessons PDF file.</strong> No other emails will be sent to you, and no marketing offers either. Unsubscribe anytime.</p></div>
 			</div>
-			<!-- TODO: connect to ActiveCampaign -->
-			<form class="mx-auto mt-8 max-w-[635px] space-y-[10px] bg-[#fff3d5] px-10 py-8" action="#" method="post">
-				<input type="text" name="name" placeholder="Your Name" aria-label="Your Name" class="h-[56px] w-full border border-[#ddd] bg-white px-4 font-button text-[14px]" />
+			<form class="mx-auto mt-8 max-w-[635px] space-y-[10px] bg-[#fff3d5] px-10 py-8" action={activeCampaign.action} method="post"><AcFields form="links" />
+				<input type="text" name="fullname" placeholder="Your Name" aria-label="Your Name" class="h-[56px] w-full border border-[#ddd] bg-white px-4 font-button text-[14px]" />
 				<input type="email" name="email" placeholder="Your Email" aria-label="Your Email" required class="h-[56px] w-full border border-[#ddd] bg-white px-4 font-button text-[14px]" />
 				<button type="submit" class="!mt-[19px] h-[56px] w-full bg-[#ff9531] font-button text-[24px] font-bold text-white hover:opacity-85">SIGN ME UP!</button>
 			</form>

@@ -1,6 +1,8 @@
 ---
 // Rebuilt from the live WordPress page layout.
 import Layout from '../layouts/Layout.astro';
+import AcFields from '../components/AcFields.astro';
+import { activeCampaign } from '../data/site';
 ---
 
 <Layout title="The Kids Ministry Toolbox - clamcentral.com">
@@ -40,7 +42,7 @@ import Layout from '../layouts/Layout.astro';
 				<p style="font-size:clamp(18px, 1.64vw, 23px);line-height:1.65;color:rgb(0, 0, 0);text-align:left;max-width:473px;margin-left:auto;margin-right:auto">• Forty+ pages of wisdom!</p>
 			</div>
 			<div style="margin-top:31px">
-				<form class="mx-auto space-y-[12px]" style="max-width:526px" action="#" method="post"><!-- TODO: connect to ActiveCampaign --><input type="text" name="name" placeholder="Your Name" aria-label="Your Name" class="h-[51px] w-full rounded-[3px] border border-[#ccc] bg-white px-4 font-button text-[14px]" /><input type="email" name="email" placeholder="Your best email" aria-label="Your best email" class="h-[51px] w-full rounded-[3px] border border-[#ccc] bg-white px-4 font-button text-[14px]" /><button type="submit" class="h-[54px] w-full font-bold text-white hover:opacity-85" style="font-family: Roboto, Arial, sans-serif;font-size:20px;letter-spacing:1px;background:rgb(38, 79, 111)">GET IT NOW</button></form>
+				<form class="mx-auto space-y-[12px]" style="max-width:526px" action={activeCampaign.action} method="post"><AcFields form="toolbox" /><input type="text" name="fullname" placeholder="Your Name" aria-label="Your Name" class="h-[51px] w-full rounded-[3px] border border-[#ccc] bg-white px-4 font-button text-[14px]" /><input type="email" name="email" placeholder="Your best email" aria-label="Your best email" required class="h-[51px] w-full rounded-[3px] border border-[#ccc] bg-white px-4 font-button text-[14px]" /><button type="submit" class="h-[54px] w-full font-bold text-white hover:opacity-85" style="font-family: Roboto, Arial, sans-serif;font-size:20px;letter-spacing:1px;background:rgb(38, 79, 111)">GET IT NOW</button></form>
 			</div>
 			<div style="margin-top:21px">
 				<p style="font-size:16px;line-height:1.40;color:rgb(0, 0, 0);text-align:center;max-width:526px;margin-left:auto;margin-right:auto">Want spam in your inbox? Sorry, you won't find it here! We detest spam and we keep your email private.</p>

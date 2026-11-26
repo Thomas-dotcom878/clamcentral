@@ -38,4 +38,10 @@ export const activeCampaign = {
 	action: 'https://clamcentral.activehosted.com/proc.php',
 	// "Website Newsletter" form (ActiveCampaign form 3)
 	newsletter: { u: '6B077CF411E7D', f: '3', s: '', c: '0', m: '0', act: 'sub', v: '2', or: 'b09bb369-a7fb-432f-80a9-d4c00d6d2852' },
+	// iPhone Object Lessons form (form 5) — /your-16-iphone-object-lessons/
+	iphone: { u: '6B07B35900B9A', f: '5', s: '', c: '0', m: '0', act: 'sub', v: '2', or: '8edbdd37-de74-4507-9ae5-77578a1edd43' },
+	// Kids Ministry Toolbox form (form 7) — /the-kids-ministry-toolbox/
+	toolbox: { u: '6B07B3599D59C', f: '7', s: '', c: '0', m: '0', act: 'sub', v: '2', or: '1ea538c2-06f7-499f-8972-b2d8a541bcbe' },
+	// Object Lesson Files / weekly links form (form 9) — /links/
+	links: { u: '6B07B35A75533', f: '9', s: '', c: '0', m: '0', act: 'sub', v: '2', or: 'edc0a695-bd98-40f1-bbf6-bc0a0c879cc2' },
 };
