@@ -15,7 +15,7 @@ const donate = topNav.find((l) => l.label === 'DONATE');
 			<div class="group relative" id="more-menu">
 				<button type="button" class="cursor-pointer py-1 font-semibold uppercase hover:text-lime" aria-haspopup="true" aria-expanded="false">MORE</button>
 				<ul class="absolute top-full left-1/2 z-50 hidden w-[140px] -translate-x-1/2 rounded-[3px] bg-white py-1 text-center font-button text-[16px] font-normal group-hover:block group-focus-within:block group-[.open]:block" style="box-shadow: rgba(0,0,0,.15) 0 0 9px 1px">
-					{moreNav.map((l) => <li><a href={l.href} class="block px-3 py-[9px] leading-[22px] text-[rgb(5,5,61)] hover:bg-black/5">{l.label}</a></li>)}
+					{moreNav.map((l) => <li><a href={l.href} class="block px-3 py-[9px] leading-[22px] font-normal text-[rgb(5,5,61)] hover:bg-black/5">{l.label}</a></li>)}
 				</ul>
 			</div>
 			{donate && <a href={donate.href} class="py-1 hover:text-lime">{donate.label}</a>}
