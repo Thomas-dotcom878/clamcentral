@@ -17,6 +17,16 @@ export const topNav = [
   { label: 'DONATE', href: donateUrl },
 ];
 
+// The "MORE" drop-down menu in the top bar (shown just before DONATE).
+export const moreNav = [
+  { label: 'Support', href: '/support/' },
+  { label: 'Newsletter', href: '/newsletter/' },
+  { label: 'Testimonials', href: '/testimonials/' },
+  { label: 'Kids Party', href: '/kids-party-events-program/' },
+  { label: 'Roadmap', href: '/roadmap-2/' },
+  { label: 'About', href: '/about/' },
+];
+
 export const footerLinks = [
   { label: 'Resources', href: '/sunday-school-ideas/' },
   { label: 'Object Lesson Files', href: '/links/' },
